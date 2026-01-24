@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assembly Points Portal</title>
+<style>
+body { font-family: Arial; background:#f4f6f8; padding:20px }
+table { border-collapse:collapse; width:100%; background:#fff }
+th,td { border:1px solid #ccc; padding:8px; text-align:center }
+th { background:#34495e; color:white }
+button { padding:5px 10px; margin:2px; cursor:pointer }
+.total { background:#ecf0f1; font-weight:bold }
+.export { background:#27ae60; color:white; border:none }
+.reset { background:#e74c3c; color:white; border:none }
+</style>
+</head>
+
+<body>
+
+<h2>?? Assembly Daily Points Tracker</h2>
+<b>Date:</b> <span id="today"></span>
+
+<table>
+<thead>
+<tr>
+<th>Employee</th>
+<th>Stencil Order (15)</th>
+<th>S.I Update (5)</th>
+<th>Dwg Review (5)</th>
+<th>Fixture Review (10)</th>
+<th>Fixture Order (10)</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+
+<br>
+<button class="export" onclick="exportCSV()">Export CSV</button>
+<button class="reset" onclick="resetToday()">Reset Today</button>
+
+<script>
+const employees = ["Vijay Sutar","Suresh","Vinayak","Mahadev"];
+const points = { stencil:15, si:5, dwg:5, fr:10, fo:10 };
+const today = new Date().toISOString().slice(0,10);
+
+document.getElementById("today").innerText = today;
+
+function getData() {
+    return JSON.parse(localStorage.getItem("pointsData")) || {};
+}
+
+function saveData(data) {
+    localStorage.setItem("pointsData", JSON.stringify(data));
+}
+
+function add(emp,type) {
+    let data = getData();
+    if(!data[today]) data[today] = {};
+    if(!data[today][emp]) data[today][emp] = {stencil:0,si:0,dwg:0,fr:0,fo:0};
+
+    data[today][emp][type] += points[type];
+    saveData(data);
+    load();
+}
+
+function load() {
+    let data = getData();
+    let tb = document.getElementById("tbody");
+    tb.innerHTML = "";
+
+    employees.forEach(emp=>{
+        let d = data[today]?.[emp] || {stencil:0,si:0,dwg:0,fr:0,fo:0};
+        let total = Object.values(d).reduce((a,b)=>a+b,0);
+
+        tb.innerHTML += `
+        <tr>
+        <td>${emp}</td>
+        <td><button onclick="add('${emp}','stencil')">+15</button><br>${d.stencil}</td>
+        <td><button onclick="add('${emp}','si')">+5</button><br>${d.si}</td>
+        <td><button onclick="add('${emp}','dwg')">+5</button><br>${d.dwg}</td>
+        <td><button onclick="add('${emp}','fr')">+10</button><br>${d.fr}</td>
+        <td><button onclick="add('${emp}','fo')">+10</button><br>${d.fo}</td>
+        <td class="total">${total}</td>
+        </tr>`;
+    });
+}
+
+function resetToday() {
+    if(confirm("Reset today's data?")){
+        let data = getData();
+        delete data[today];
+        saveData(data);
+        load();
+    }
+}
+
+function exportCSV() {
+    let data = getData();
+    let csv = "Date,Employee,Stencil,SI,DWG,Fixture Review,Fixture Order,Total\n";
+
+    for(let date in data){
+        for(let emp in data[date]){
+            let d = data[date][emp];
+            let total = Object.values(d).reduce((a,b)=>a+b,0);
+            csv += `${date},${emp},${d.stencil},${d.si},${d.dwg},${d.fr},${d.fo},${total}\n`;
+        }
+    }
+
+    let blob = new Blob([csv], { type: "text/csv" });
+    let a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "assembly_points.csv";
+    a.click();
+}
+
+load();
+</script>
+
+</body>
+</html>
