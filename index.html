@@ -1,24 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Assembly Points Portal</title>
+
 <style>
-body { font-family: Arial; background:#f4f6f8; padding:20px }
-table { border-collapse:collapse; width:100%; background:#fff }
-th,td { border:1px solid #ccc; padding:8px; text-align:center }
-th { background:#34495e; color:white }
-button { padding:5px 10px; margin:2px; cursor:pointer }
-.total { background:#ecf0f1; font-weight:bold }
-.export { background:#27ae60; color:white; border:none }
-.reset { background:#e74c3c; color:white; border:none }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 20px;
+}
+h2 {
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background: #2c3e50;
+    color: white;
+}
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    cursor: pointer;
+}
+.total {
+    background: #ecf0f1;
+    font-weight: bold;
+}
+.export {
+    background: #27ae60;
+    color: white;
+    border: none;
+}
+.reset {
+    background: #e74c3c;
+    color: white;
+    border: none;
+}
 </style>
 </head>
 
 <body>
 
-<h2>?? Assembly Daily Points Tracker</h2>
-<b>Date:</b> <span id="today"></span>
+<h2>📋 Assembly Daily Points Tracker</h2>
+
+<p><b>Date:</b> <span id="date"></span></p>
 
 <table>
 <thead>
@@ -32,7 +67,7 @@ button { padding:5px 10px; margin:2px; cursor:pointer }
 <th>Total</th>
 </tr>
 </thead>
-<tbody id="tbody"></tbody>
+<tbody id="tableBody"></tbody>
 </table>
 
 <br>
@@ -40,81 +75,94 @@ button { padding:5px 10px; margin:2px; cursor:pointer }
 <button class="reset" onclick="resetToday()">Reset Today</button>
 
 <script>
-const employees = ["Vijay Sutar","Suresh","Vinayak","Mahadev"];
-const points = { stencil:15, si:5, dwg:5, fr:10, fo:10 };
-const today = new Date().toISOString().slice(0,10);
+const employees = ["Vijay Sutar", "Suresh", "Vinayak", "Mahadev"];
+const pointMap = {
+    stencil: 15,
+    si: 5,
+    dwg: 5,
+    fixtureReview: 10,
+    fixtureOrder: 10
+};
 
-document.getElementById("today").innerText = today;
+const today = new Date().toISOString().split("T")[0];
+document.getElementById("date").innerText = today;
 
-function getData() {
-    return JSON.parse(localStorage.getItem("pointsData")) || {};
+function getStore() {
+    return JSON.parse(localStorage.getItem("assemblyPoints")) || {};
 }
 
-function saveData(data) {
-    localStorage.setItem("pointsData", JSON.stringify(data));
+function saveStore(data) {
+    localStorage.setItem("assemblyPoints", JSON.stringify(data));
 }
 
-function add(emp,type) {
-    let data = getData();
-    if(!data[today]) data[today] = {};
-    if(!data[today][emp]) data[today][emp] = {stencil:0,si:0,dwg:0,fr:0,fo:0};
-
-    data[today][emp][type] += points[type];
-    saveData(data);
-    load();
+function addPoint(emp, type) {
+    let store = getStore();
+    if (!store[today]) store[today] = {};
+    if (!store[today][emp]) {
+        store[today][emp] = {
+            stencil: 0, si: 0, dwg: 0,
+            fixtureReview: 0, fixtureOrder: 0
+        };
+    }
+    store[today][emp][type] += pointMap[type];
+    saveStore(store);
+    loadTable();
 }
 
-function load() {
-    let data = getData();
-    let tb = document.getElementById("tbody");
-    tb.innerHTML = "";
+function loadTable() {
+    let store = getStore();
+    let body = document.getElementById("tableBody");
+    body.innerHTML = "";
 
-    employees.forEach(emp=>{
-        let d = data[today]?.[emp] || {stencil:0,si:0,dwg:0,fr:0,fo:0};
-        let total = Object.values(d).reduce((a,b)=>a+b,0);
+    employees.forEach(emp => {
+        let data = store[today]?.[emp] || {
+            stencil: 0, si: 0, dwg: 0,
+            fixtureReview: 0, fixtureOrder: 0
+        };
+        let total = Object.values(data).reduce((a,b)=>a+b,0);
 
-        tb.innerHTML += `
+        body.innerHTML += `
         <tr>
-        <td>${emp}</td>
-        <td><button onclick="add('${emp}','stencil')">+15</button><br>${d.stencil}</td>
-        <td><button onclick="add('${emp}','si')">+5</button><br>${d.si}</td>
-        <td><button onclick="add('${emp}','dwg')">+5</button><br>${d.dwg}</td>
-        <td><button onclick="add('${emp}','fr')">+10</button><br>${d.fr}</td>
-        <td><button onclick="add('${emp}','fo')">+10</button><br>${d.fo}</td>
-        <td class="total">${total}</td>
+            <td>${emp}</td>
+            <td><button onclick="addPoint('${emp}','stencil')">+15</button><br>${data.stencil}</td>
+            <td><button onclick="addPoint('${emp}','si')">+5</button><br>${data.si}</td>
+            <td><button onclick="addPoint('${emp}','dwg')">+5</button><br>${data.dwg}</td>
+            <td><button onclick="addPoint('${emp}','fixtureReview')">+10</button><br>${data.fixtureReview}</td>
+            <td><button onclick="addPoint('${emp}','fixtureOrder')">+10</button><br>${data.fixtureOrder}</td>
+            <td class="total">${total}</td>
         </tr>`;
     });
 }
 
 function resetToday() {
-    if(confirm("Reset today's data?")){
-        let data = getData();
-        delete data[today];
-        saveData(data);
-        load();
+    if (confirm("Reset today's points?")) {
+        let store = getStore();
+        delete store[today];
+        saveStore(store);
+        loadTable();
     }
 }
 
 function exportCSV() {
-    let data = getData();
+    let store = getStore();
     let csv = "Date,Employee,Stencil,SI,DWG,Fixture Review,Fixture Order,Total\n";
 
-    for(let date in data){
-        for(let emp in data[date]){
-            let d = data[date][emp];
+    for (let date in store) {
+        for (let emp in store[date]) {
+            let d = store[date][emp];
             let total = Object.values(d).reduce((a,b)=>a+b,0);
-            csv += `${date},${emp},${d.stencil},${d.si},${d.dwg},${d.fr},${d.fo},${total}\n`;
+            csv += `${date},${emp},${d.stencil},${d.si},${d.dwg},${d.fixtureReview},${d.fixtureOrder},${total}\n`;
         }
     }
 
     let blob = new Blob([csv], { type: "text/csv" });
-    let a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "assembly_points.csv";
-    a.click();
+    let link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "assembly_points.csv";
+    link.click();
 }
 
-load();
+loadTable();
 </script>
 
 </body>
