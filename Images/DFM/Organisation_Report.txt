@@ -1,0 +1,151 @@
+DFM FILE ORGANISATION REPORT
+
+Original images: 131
+Retained images: 127
+Exact duplicate copies removed: 4
+Topic folders: 39
+
+Duplicate removal used SHA-256 file hashes and was also checked against decoded image pixels.
+Different illustrations or text under similar titles are retained as named variants.
+Original PNG bytes and resolution are preserved.
+Review scope: titles, topic classification and duplicate detection; technical claims were not independently validated.
+
+Source title issues:
+- Signal Integrity images both say Part-1; filenames use their actual subtopics.
+- Marking and Label images contain repeated/inconsistent part labels; filenames use subtopics and variant labels.
+- Surface Finish Part-1 was not present in the supplied ZIP.
+
+REMOVED EXACT DUPLICATES
+DFM/ChatGPT Image Oct 4, 2026, 06_10_59 PM.png -> retained 32_Marking_and_Labels/QR_Codes_Date_Codes_and_Customer_Labels_Variant_A.png
+DFM/ChatGPT Image Oct 4, 2026, 06_11_06 PM.png -> retained 32_Marking_and_Labels/QR_Codes_Date_Codes_and_Customer_Labels_Variant_B.png
+DFM/ChatGPT Image Oct 4, 2026, 06_34_51 PM.png -> retained 07_Vias/Vias_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_40_41 PM.png -> retained 04_PCB_Stack_Up/Power_and_Ground_Arrangement.png
+
+ORIGINAL TO NEW FILENAME MAP
+DFM/ChatGPT Image Oct 4, 2026, 06_07_30 PM.png -> 39_IPC_Standards/IPC_Standards_for_DFM_Engineers.png
+DFM/ChatGPT Image Oct 4, 2026, 06_07_53 PM.png -> 38_PTH_Defects/Common_PTH_Defects_and_DFM_Prevention.png
+DFM/ChatGPT Image Oct 4, 2026, 06_07_59 PM.png -> 37_SMT_Defects/SMT_Defects_Part_04.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_04 PM.png -> 37_SMT_Defects/SMT_Defects_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_16 PM.png -> 37_SMT_Defects/SMT_Defects_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_21 PM.png -> 37_SMT_Defects/SMT_Defects_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_27 PM.png -> 36_High_Voltage_and_High_Current/High_Voltage_and_High_Current_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_31 PM.png -> 36_High_Voltage_and_High_Current/High_Voltage_and_High_Current_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_36 PM.png -> 35_Signal_Integrity_and_High_Speed/Reference_Planes_Via_Stubs_Back_Drilling_Crosstalk_and_RF.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_41 PM.png -> 35_Signal_Integrity_and_High_Speed/Impedance_Differential_Pairs_Length_Matching_and_Return_Paths.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_46 PM.png -> 34_Flex_and_Rigid_Flex/Flex_and_Rigid_Flex_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_50 PM.png -> 34_Flex_and_Rigid_Flex/Flex_and_Rigid_Flex_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_55 PM.png -> 33_Press_Fit_and_Mechanical_Assembly/Press_Fit_and_Mechanical_Assembly_DFM.png
+DFM/ChatGPT Image Oct 4, 2026, 06_08_59 PM.png -> 32_Marking_and_Labels/QR_Codes_Date_Codes_and_Customer_Labels_Variant_A.png
+DFM/ChatGPT Image Oct 4, 2026, 06_09_06 PM.png -> 32_Marking_and_Labels/QR_Codes_Date_Codes_and_Customer_Labels_Variant_B.png
+DFM/ChatGPT Image Oct 4, 2026, 06_11_11 PM.png -> 32_Marking_and_Labels/Ink_Marking_Stickers_Serial_Numbers_and_Barcodes.png
+DFM/ChatGPT Image Oct 4, 2026, 06_11_28 PM.png -> 31_Conformal_Coating_and_Encapsulation/Conformal_Coating_and_Encapsulation_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_11_41 PM.png -> 31_Conformal_Coating_and_Encapsulation/Conformal_Coating_and_Encapsulation_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_11_53 PM.png -> 30_Cleaning/Cleaning_DFM.png
+DFM/ChatGPT Image Oct 4, 2026, 06_12_04 PM.png -> 29_Inspection/Inspection_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_12_18 PM.png -> 29_Inspection/Inspection_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_12_31 PM.png -> 28_Design_for_Test/Design_for_Test_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_12_42 PM.png -> 28_Design_for_Test/Design_for_Test_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_12_53 PM.png -> 27_Thermal_Design/Thermal_Design_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_13_06 PM.png -> 27_Thermal_Design/Thermal_Design_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_13_24 PM.png -> 26_Mechanical_Design/Mechanical_Design_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_13_35 PM.png -> 26_Mechanical_Design/Mechanical_Design_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_14_00 PM.png -> 26_Mechanical_Design/Mechanical_Design_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_14_11 PM.png -> 25_Depanelization/Depanelization_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_14_22 PM.png -> 25_Depanelization/Depanelization_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_14_33 PM.png -> 24_Panelization/Panelization_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_14_43 PM.png -> 24_Panelization/Panelization_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_14_56 PM.png -> 24_Panelization/Panelization_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_15_08 PM.png -> 23_MSL_and_Baking/MSL_and_Baking_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_15_27 PM.png -> 23_MSL_and_Baking/MSL_and_Baking_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_15_47 PM.png -> 22_Component_Special_Preparation/Component_Special_Preparation_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_15_59 PM.png -> 22_Component_Special_Preparation/Component_Special_Preparation_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_16_10 PM.png -> 21_Reflow/Reflow_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_16_21 PM.png -> 21_Reflow/Reflow_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_19_07 PM.png -> 21_Reflow/Reflow_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_19_24 PM.png -> 20_Selective_Soldering/Selective_Soldering_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_19_40 PM.png -> 20_Selective_Soldering/Selective_Soldering_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_19_56 PM.png -> 19_Wave_Soldering/Wave_Soldering_Part_04.png
+DFM/ChatGPT Image Oct 4, 2026, 06_20_33 PM.png -> 19_Wave_Soldering/Wave_Soldering_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_20_45 PM.png -> 19_Wave_Soldering/Wave_Soldering_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_21_09 PM.png -> 19_Wave_Soldering/Wave_Soldering_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_21_30 PM.png -> 18_PTH_and_Through_Hole/PTH_and_Through_Hole_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_22_04 PM.png -> 18_PTH_and_Through_Hole/PTH_and_Through_Hole_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_22_17 PM.png -> 18_PTH_and_Through_Hole/PTH_and_Through_Hole_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_22_31 PM.png -> 16_Solder_Paste_and_Stencil/Solder_Paste_and_Stencil_Part_01_Variant_A.png
+DFM/ChatGPT Image Oct 4, 2026, 06_23_04 PM.png -> 17_Fiducials/Fiducials_Variant_A.png
+DFM/ChatGPT Image Oct 4, 2026, 06_23_14 PM.png -> 17_Fiducials/Fiducials_Variant_B.png
+DFM/ChatGPT Image Oct 4, 2026, 06_23_43 PM.png -> 16_Solder_Paste_and_Stencil/Solder_Paste_and_Stencil_Part_04.png
+DFM/ChatGPT Image Oct 4, 2026, 06_23_57 PM.png -> 16_Solder_Paste_and_Stencil/Solder_Paste_and_Stencil_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_24_08 PM.png -> 16_Solder_Paste_and_Stencil/Solder_Paste_and_Stencil_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_24_20 PM.png -> 16_Solder_Paste_and_Stencil/Solder_Paste_and_Stencil_Part_01_Variant_B.png
+DFM/ChatGPT Image Oct 4, 2026, 06_25_04 PM.png -> 15_BGA/BGA_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_25_19 PM.png -> 15_BGA/BGA_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_25_44 PM.png -> 15_BGA/BGA_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_25_59 PM.png -> 14_Fine_Pitch_Components/Fine_Pitch_Components_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_26_12 PM.png -> 14_Fine_Pitch_Components/Fine_Pitch_Components_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_26_25 PM.png -> 14_Fine_Pitch_Components/Fine_Pitch_Components_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_26_38 PM.png -> 13_SMT_Placement/SMT_Placement_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_27_09 PM.png -> 13_SMT_Placement/SMT_Placement_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_27_25 PM.png -> 13_SMT_Placement/SMT_Placement_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_27_46 PM.png -> 12_Component_Footprints/Component_Footprints_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_28_02 PM.png -> 12_Component_Footprints/Component_Footprints_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_28_22 PM.png -> 11_Surface_Finish/Surface_Finish_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_28_49 PM.png -> 11_Surface_Finish/Surface_Finish_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_29_24 PM.png -> 10_Silkscreen_and_Legend/Silkscreen_and_Legend_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_29_35 PM.png -> 10_Silkscreen_and_Legend/Silkscreen_and_Legend_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_29_45 PM.png -> 10_Silkscreen_and_Legend/Silkscreen_and_Legend_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_29_56 PM.png -> 09_Solder_Mask/Solder_Mask_Part_04.png
+DFM/ChatGPT Image Oct 4, 2026, 06_32_55 PM.png -> 09_Solder_Mask/Solder_Mask_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_33_05 PM.png -> 09_Solder_Mask/Solder_Mask_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_33_15 PM.png -> 09_Solder_Mask/Solder_Mask_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_33_24 PM.png -> 08_HDI/HDI_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_33_33 PM.png -> 08_HDI/HDI_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_33_43 PM.png -> 08_HDI/HDI_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_33_52 PM.png -> 07_Vias/Vias_Part_04.png
+DFM/ChatGPT Image Oct 4, 2026, 06_34_02 PM.png -> 07_Vias/Vias_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_34_40 PM.png -> 07_Vias/Vias_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_34_51 PM (1).png -> 07_Vias/Vias_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_36_48 PM.png -> 06_Holes_and_Drilling/Holes_and_Drilling_Part_04.png
+DFM/ChatGPT Image Oct 4, 2026, 06_36_59 PM.png -> 06_Holes_and_Drilling/Holes_and_Drilling_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_37_13 PM.png -> 06_Holes_and_Drilling/Holes_and_Drilling_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_37_24 PM.png -> 06_Holes_and_Drilling/Holes_and_Drilling_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_39_31 PM.png -> 05_Traces_and_Copper/Traces_and_Copper_Part_04.png
+DFM/ChatGPT Image Oct 4, 2026, 06_39_44 PM.png -> 05_Traces_and_Copper/Traces_and_Copper_Part_03.png
+DFM/ChatGPT Image Oct 4, 2026, 06_39_55 PM.png -> 05_Traces_and_Copper/Traces_and_Copper_Part_02.png
+DFM/ChatGPT Image Oct 4, 2026, 06_40_06 PM.png -> 05_Traces_and_Copper/Traces_and_Copper_Part_01.png
+DFM/ChatGPT Image Oct 4, 2026, 06_40_20 PM.png -> 04_PCB_Stack_Up/Warpage_Considerations.png
+DFM/ChatGPT Image Oct 4, 2026, 06_40_30 PM.png -> 04_PCB_Stack_Up/Stack_Up_Tolerances.png
+DFM/ChatGPT Image Oct 4, 2026, 06_40_41 PM (1).png -> 04_PCB_Stack_Up/Power_and_Ground_Arrangement.png
+DFM/ChatGPT Image Oct 4, 2026, 06_40_56 PM.png -> 04_PCB_Stack_Up/Signal_Layers.png
+DFM/ChatGPT Image Oct 4, 2026, 06_41_17 PM.png -> 04_PCB_Stack_Up/Plane_Layers.png
+DFM/ChatGPT Image Oct 4, 2026, 06_42_08 PM.png -> 04_PCB_Stack_Up/Dielectric_Thickness.png
+DFM/ChatGPT Image Oct 4, 2026, 06_42_36 PM.png -> 04_PCB_Stack_Up/Symmetrical_Stack_Up.png
+DFM/ChatGPT Image Oct 4, 2026, 06_42_50 PM.png -> 04_PCB_Stack_Up/Copper_Distribution.png
+DFM/ChatGPT Image Oct 4, 2026, 06_43_10 PM.png -> 04_PCB_Stack_Up/Core_and_Prepreg_Selection.png
+DFM/ChatGPT Image Oct 4, 2026, 06_43_22 PM.png -> 04_PCB_Stack_Up/Layer_Count_and_Stack_Up_Detailed.png
+DFM/ChatGPT Image Oct 4, 2026, 06_43_33 PM.png -> 04_PCB_Stack_Up/Single_Sided_Double_Sided_and_Multilayer_Overview.png
+DFM/ChatGPT Image Oct 4, 2026, 06_43_43 PM.png -> 03_PCB_Materials/Halogen_Free_Requirements.png
+DFM/ChatGPT Image Oct 4, 2026, 06_43_55 PM.png -> 03_PCB_Materials/RoHS_Requirements.png
+DFM/ChatGPT Image Oct 4, 2026, 06_44_07 PM.png -> 03_PCB_Materials/UL_Requirements.png
+DFM/ChatGPT Image Oct 4, 2026, 06_44_18 PM.png -> 03_PCB_Materials/Loss_Tangent_Df.png
+DFM/ChatGPT Image Oct 4, 2026, 06_44_31 PM.png -> 03_PCB_Materials/Dielectric_Constant_Dk.png
+DFM/ChatGPT Image Oct 4, 2026, 06_44_59 PM.png -> 03_PCB_Materials/CTE_Coefficient_of_Thermal_Expansion.png
+DFM/ChatGPT Image Oct 4, 2026, 06_45_09 PM.png -> 03_PCB_Materials/Td_Decomposition_Temperature.png
+DFM/ChatGPT Image Oct 4, 2026, 06_45_20 PM.png -> 03_PCB_Materials/Tg_Glass_Transition_Temperature.png
+DFM/ChatGPT Image Oct 4, 2026, 06_45_31 PM.png -> 03_PCB_Materials/Copper_Thickness_and_Weight.png
+DFM/ChatGPT Image Oct 4, 2026, 06_45_41 PM.png -> 03_PCB_Materials/Material_Thickness.png
+DFM/ChatGPT Image Oct 4, 2026, 06_45_51 PM.png -> 03_PCB_Materials/Flex_Material_FPC.png
+DFM/ChatGPT Image Oct 4, 2026, 06_46_03 PM.png -> 03_PCB_Materials/Polyimide_PI.png
+DFM/ChatGPT Image Oct 4, 2026, 06_46_15 PM.png -> 03_PCB_Materials/Rogers_and_RF_Materials.png
+DFM/ChatGPT Image Oct 4, 2026, 06_46_27 PM.png -> 03_PCB_Materials/High_Tg_Materials.png
+DFM/ChatGPT Image Oct 4, 2026, 06_46_40 PM.png -> 03_PCB_Materials/FR4_Glass_Epoxy.png
+DFM/ChatGPT Image Oct 4, 2026, 06_46_50 PM.png -> 02_Customer_Data_and_Documentation/Customer_Data_and_Documentation_Review.png
+DFM/ChatGPT Image Oct 4, 2026, 06_47_00 PM.png -> 01_DFM_Fundamentals/Manufacturer_Capabilities.png
+DFM/ChatGPT Image Oct 4, 2026, 06_47_10 PM.png -> 01_DFM_Fundamentals/IPC_Classes_1_2_and_3.png
+DFM/ChatGPT Image Oct 4, 2026, 06_47_22 PM.png -> 01_DFM_Fundamentals/PCB_Manufacturing_Process_Flow.png
+DFM/ChatGPT Image Oct 4, 2026, 06_47_36 PM.png -> 01_DFM_Fundamentals/Design_for_Cost_DFC.png
+DFM/ChatGPT Image Oct 4, 2026, 06_47_59 PM.png -> 01_DFM_Fundamentals/Design_for_Testability_DFT.png
+DFM/ChatGPT Image Oct 4, 2026, 06_48_13 PM.png -> 01_DFM_Fundamentals/DFM_vs_DFT.png
+DFM/ChatGPT Image Oct 4, 2026, 06_49_41 PM.png -> 01_DFM_Fundamentals/DFM_vs_DFA.png
+DFM/ChatGPT Image Oct 4, 2026, 06_49_52 PM.png -> 01_DFM_Fundamentals/DFM_vs_DRC.png
+DFM/ChatGPT Image Oct 4, 2026, 06_50_28 PM.png -> 01_DFM_Fundamentals/What_is_DFM.png
